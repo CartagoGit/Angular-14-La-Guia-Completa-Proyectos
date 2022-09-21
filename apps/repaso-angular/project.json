@@ -17,7 +17,10 @@
           "apps/repaso-angular/src/favicon.ico",
           "apps/repaso-angular/src/assets"
         ],
-        "styles": ["apps/repaso-angular/src/styles.css"],
+        "styles": [
+          "apps/repaso-angular/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
