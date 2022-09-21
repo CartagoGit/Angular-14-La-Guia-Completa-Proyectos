@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: '1-repaso-angular',
-  preset: '../../jest.preset.js',
+  displayName: '2-piano-app-piano-app',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/1-repaso-angular',
+  coverageDirectory: '../../../coverage/apps/2-piano-app/piano-app',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'cartago-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styles: [],
 })
 export class AppComponent {
-  title = '1-repaso-angular';
+  title = '1-repaso-angular-repaso-angular';
 }
