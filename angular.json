@@ -2,7 +2,6 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "1-repaso-angular-repaso-angular": "apps/1-repaso-angular/repaso-angular",
-    "2-piano-app-piano-app": "apps/2-piano-app/piano-app"
+    "repaso-angular": "apps/repaso-angular"
   }
 }

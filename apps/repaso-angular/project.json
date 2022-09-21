@@ -1,23 +1,23 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/1-repaso-angular/repaso-angular/src",
+  "sourceRoot": "apps/repaso-angular/src",
   "prefix": "cartago",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/1-repaso-angular/repaso-angular",
-        "index": "apps/1-repaso-angular/repaso-angular/src/index.html",
-        "main": "apps/1-repaso-angular/repaso-angular/src/main.ts",
-        "polyfills": "apps/1-repaso-angular/repaso-angular/src/polyfills.ts",
-        "tsConfig": "apps/1-repaso-angular/repaso-angular/tsconfig.app.json",
+        "outputPath": "dist/apps/repaso-angular",
+        "index": "apps/repaso-angular/src/index.html",
+        "main": "apps/repaso-angular/src/main.ts",
+        "polyfills": "apps/repaso-angular/src/polyfills.ts",
+        "tsConfig": "apps/repaso-angular/tsconfig.app.json",
         "assets": [
-          "apps/1-repaso-angular/repaso-angular/src/favicon.ico",
-          "apps/1-repaso-angular/repaso-angular/src/assets"
+          "apps/repaso-angular/src/favicon.ico",
+          "apps/repaso-angular/src/assets"
         ],
-        "styles": ["apps/1-repaso-angular/repaso-angular/src/styles.css"],
+        "styles": ["apps/repaso-angular/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -36,8 +36,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/1-repaso-angular/repaso-angular/src/environments/environment.ts",
-              "with": "apps/1-repaso-angular/repaso-angular/src/environments/environment.prod.ts"
+              "replace": "apps/repaso-angular/src/environments/environment.ts",
+              "with": "apps/repaso-angular/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -57,10 +57,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "1-repaso-angular-repaso-angular:build:production"
+          "browserTarget": "repaso-angular:build:production"
         },
         "development": {
-          "browserTarget": "1-repaso-angular-repaso-angular:build:development"
+          "browserTarget": "repaso-angular:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -68,23 +68,23 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "1-repaso-angular-repaso-angular:build"
+        "browserTarget": "repaso-angular:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/1-repaso-angular/repaso-angular/**/*.ts",
-          "apps/1-repaso-angular/repaso-angular/**/*.html"
+          "apps/repaso-angular/**/*.ts",
+          "apps/repaso-angular/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/1-repaso-angular/repaso-angular"],
+      "outputs": ["coverage/apps/repaso-angular"],
       "options": {
-        "jestConfig": "apps/1-repaso-angular/repaso-angular/jest.config.ts",
+        "jestConfig": "apps/repaso-angular/jest.config.ts",
         "passWithNoTests": true
       }
     }
