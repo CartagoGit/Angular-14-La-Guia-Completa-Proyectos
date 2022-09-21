@@ -1,8 +1,12 @@
+# Curso de Angular con varios proyectos para prácticar conocimientos con Angular
 
+<https://www.udemy.com/course/angular-10-fundamentos-8-app/> Link al curso en Udemy
 
-# Cartago
+## El Proyecto ha sido creado usando Nx para hacer un monorepositorio con todos los proyectos del curso
 
-This project was generated using [Nx](https://nx.dev).
+Aquí toda la información del README.md original de nx
+
+## This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
@@ -86,11 +90,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
 
 ## ☁ Nx Cloud
 
