@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "1-repaso-angular": "apps/1-repaso-angular",
+    "1-repaso-angular-e2e": "apps/1-repaso-angular-e2e"
+  }
+}
