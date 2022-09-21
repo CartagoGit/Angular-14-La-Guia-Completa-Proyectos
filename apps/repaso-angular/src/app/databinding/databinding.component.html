@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+    <hr />
+    <!-- INTERPOLACION -->
+    <h2>Interpolación</h2>
+    <h5>Mi nombre es {{ nombre }}</h5>
+    <h5>La suma de 2 + 2 = {{ 2 + 2 }}</h5>
+    <h5>La suma de dos numeros es = {{ getSuma(6, 4) }}</h5>
+    <hr />
+    <!-- PROPERTY BINDING -->
+    <h2>Property binding</h2>
+    <input
+      type="text"
+      [placeholder]="textoPlaceholder"
+      class="form-control"
+      [disabled]="deshabilitado"
+    />
+    <br />
+    <img [src]="imgSrc" alt="imagen" width="400px" height="400px" />
+    <hr />
+    <!-- EVENT BINDING -->
+    <h2>Event Binding</h2>
+    <h5>{{ texto }}</h5>
+    <br />
+    <button type="button" class="btn btn-primary" (click)="botonClickeado()">
+      Clickeame
+    </button>
+    <hr />
+    <!-- TWO WAY DATA BINDING -->
+    <h2>Two Way Data Binding</h2>
+    Este solo es de property binding
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Escriba algo aqui"
+      [value]="texto2wdb"
+    />
+    Este tiene el two way data binding
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Escriba algo aqui"
+      [(ngModel)]="texto2wdb"
+    />
+    <br />
+    {{ texto2wdb }}
+  </div>
+</div>
