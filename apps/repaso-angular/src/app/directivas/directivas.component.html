@@ -1,2 +1,110 @@
-<hr />
-<h2>Directivas</h2>
+<div class="row">
+  <div class="col">
+    <hr />
+    <h2>Directivas</h2>
+    <!-- NGFOR -->
+    <hr />
+    <h3>*ngFor</h3>
+    <h5>Listado de estudiantes</h5>
+    <br />
+    <table class="table">
+      <thead>
+        <th>Num</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of listEstudiantes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.estado }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- NGIF -->
+    <hr />
+    <h3>*ngFor</h3>
+    <button class="btn btn-primary" (click)="mostrarToggle()">
+      Toggle ngIf
+    </button>
+    <div *ngIf="mostrar">Solo se muestra cuando se cumple la condicion</div>
+    <!-- NGSTYLE -->
+    <hr />
+    <h3>[ngStyle]</h3>
+    <table class="table">
+      <thead>
+        <th>Num</th>
+        <th>Nombre</th>
+        <th>Estado[ngStyle]</th>
+        <th>Estado[style]</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of listEstudiantes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ estudiante.nombre }}</td>
+          <td
+            [ngStyle]="{
+              'font-style':
+                estudiante.estado === 'Promocionado' ? 'italic' : 'normal'
+            }"
+          >
+            {{ estudiante.estado }}
+          </td>
+          <td
+            [style]="{
+              'font-style':
+                estudiante.estado === 'Promocionado' ? 'italic' : 'normal'
+            }"
+          >
+            {{ estudiante.estado }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- NGCLASS -->
+    <hr />
+    <h3>[ngClass]</h3>
+    <p>Es lo mismo realmente que el ngStyle pero con clases. Por ejemplo:</p>
+    <span
+      [ngClass]="
+        listEstudiantes.length > 0 ? 'badge bg-primary' : 'badge bg-secondary'
+      "
+      >Se cumple la primera</span
+    ><span
+      [ngClass]="
+        listEstudiantes.length <= 0 ? 'badge bg-primary' : 'badge bg-secondary'
+      "
+      >Se cumple al seguna</span
+    >
+    <!-- NGSWITCH -->
+    <hr />
+    <h3>[ngSwitch]</h3>
+    <table class="table">
+      <thead>
+        <th>Num</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let estudiante of listEstudiantes; let i = index"
+          [ngSwitch]="estudiante.estado"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ estudiante.nombre }}</td>
+          <td>
+            <span *ngSwitchCase="'Promocionado'" class="badge bg-success">
+              {{ estudiante.estado }}
+            </span>
+            <span *ngSwitchCase="'Aprobado'" class="badge bg-primary">
+              {{ estudiante.estado }}
+            </span>
+            <span *ngSwitchCase="'Suspenso'" class="badge bg-danger">
+              {{ estudiante.estado }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
