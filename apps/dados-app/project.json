@@ -17,7 +17,10 @@
           "apps/dados-app/src/favicon.ico",
           "apps/dados-app/src/assets"
         ],
-        "styles": ["apps/dados-app/src/styles.css"],
+        "styles": [
+          "apps/dados-app/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {

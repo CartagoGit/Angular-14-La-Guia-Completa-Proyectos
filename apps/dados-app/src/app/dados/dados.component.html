@@ -1,0 +1,21 @@
+<div class="container-fluid text-sm-center p-5 bg-light border dados-container">
+  <button
+    type="button"
+    class="btn btn-outline-primary btn-lg"
+    (click)="tirarDados()"
+  >
+    Tirar Dados
+  </button>
+  <br />
+  <div class="row justify-content-center mt-3">
+    <div class="col-4">
+      <img [src]="dadoIzq" alt="dado1" />
+    </div>
+    <div class="col-4">
+      <img [src]="dadoDer" alt="dado2" />
+    </div>
+  </div>
+  <br />
+  <h3>La tirada de dados salio en total con: {{ total }}</h3>
+  <h2 *ngIf="dadoDer === dadoIzq">Los Dados son Iguales!!!</h2>
+</div>
