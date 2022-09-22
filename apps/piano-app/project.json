@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/piano-app/src",
-  "prefix": "cartago",
+  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -17,7 +17,10 @@
           "apps/piano-app/src/favicon.ico",
           "apps/piano-app/src/assets"
         ],
-        "styles": ["apps/piano-app/src/styles.css"],
+        "styles": [
+          "apps/piano-app/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
