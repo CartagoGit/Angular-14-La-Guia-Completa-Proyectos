@@ -17,7 +17,10 @@
           "apps/tareas-app/src/favicon.ico",
           "apps/tareas-app/src/assets"
         ],
-        "styles": ["apps/tareas-app/src/styles.css"],
+        "styles": [
+          "apps/tareas-app/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -69,15 +72,6 @@
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
         "browserTarget": "tareas-app:build"
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/tareas-app/**/*.ts",
-          "apps/tareas-app/**/*.html"
-        ]
       }
     }
   },
