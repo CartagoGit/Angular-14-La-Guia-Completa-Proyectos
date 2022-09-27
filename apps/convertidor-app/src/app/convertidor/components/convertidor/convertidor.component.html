@@ -1,0 +1,61 @@
+<div class="container mt-3">
+  <form>
+    <!-- INPUT CANTIDAD -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="cantidad">Input cantidad</label>
+          <input
+            type="number"
+            class="form-control form-control-lg"
+            placeholder="Ingrese una cantidad..."
+            id="cantidad"
+            [(ngModel)]="cantidad"
+            name="cantidad"
+            (input)="convertir()"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- SELECCIONAR DIVISAS -->
+    <div class="row mt-3">
+      <div class="col-lg-6">
+        <label for="tengo">Tengo</label>
+        <select
+          class="form-select form-control-lg"
+          aria-label="select tengo"
+          id="tengo"
+          [(ngModel)]="tengo"
+          name="tengo"
+          (change)="convertir()"
+        >
+          <option *ngFor="let moneda of monedas" [value]="moneda.symbol">
+            {{ moneda.symbol }}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-6">
+        <label for="quiero">Quiero</label>
+        <select
+          class="form-select form-control-lg"
+          aria-label="select quiero"
+          id="quiero"
+          [(ngModel)]="quiero"
+          name="quiero"
+          (change)="convertir()"
+        >
+          <option *ngFor="let moneda of monedas" [value]="moneda.symbol">
+            {{ moneda.symbol }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <h5 *ngIf="total > 0" class="text-center mt-3">
+    <span class="badge bg-success">{{ cantidad }} {{ tengo }}</span>
+    <span class="badge bg-secondary">SON</span>
+    <span class="badge bg-success"
+      >{{ total | number: "1.2-2" }} {{ quiero }}</span
+    >
+  </h5>
+</div>

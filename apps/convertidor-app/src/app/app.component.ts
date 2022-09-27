@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
   styles: [],
 })
 export class AppComponent {
-  title = "convertidor-app";
+  title = "Convertidor App";
 }

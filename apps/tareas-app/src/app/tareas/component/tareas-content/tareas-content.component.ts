@@ -42,7 +42,5 @@ export class TareasContentComponent implements OnInit {
 
   actualizarTarea(tarea: TareaModel, indice: number): void {
     this.listTareas[indice].estado = !tarea.estado;
-    console.log(tarea.estado);
-    console.log(tarea);
   }
 }

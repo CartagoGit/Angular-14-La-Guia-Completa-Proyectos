@@ -17,7 +17,10 @@
           "apps/convertidor-app/src/favicon.ico",
           "apps/convertidor-app/src/assets"
         ],
-        "styles": ["apps/convertidor-app/src/styles.css"],
+        "styles": [
+          "apps/convertidor-app/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
