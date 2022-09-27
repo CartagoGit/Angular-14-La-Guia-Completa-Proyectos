@@ -4,6 +4,7 @@
   "projects": {
     "dados-app": "apps/dados-app",
     "piano-app": "apps/piano-app",
-    "repaso-angular": "apps/repaso-angular"
+    "repaso-angular": "apps/repaso-angular",
+    "tareas-app": "apps/tareas-app"
   }
 }
