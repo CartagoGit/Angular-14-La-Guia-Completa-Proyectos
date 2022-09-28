@@ -4,6 +4,7 @@
   "projects": {
     "convertidor-app": "apps/convertidor-app",
     "dados-app": "apps/dados-app",
+    "peso-ideal-app": "apps/peso-ideal-app",
     "piano-app": "apps/piano-app",
     "repaso-angular": "apps/repaso-angular",
     "tareas-app": "apps/tareas-app"

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+body {
+  background-color: #0a0e21;
+}
+
+.titulo {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.row {
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.btn.btn-color {
+  background-color: #ff3366;
+  border-color: #ff3366;
+  border-radius: 25px;
+  width: 100%;
+  transition: all 300ms;
+}
+.btn.btn-color:hover {
+  background-color: #ff3366;
+  border-color: #ff3366;
+  /* filter: brightness(1.25); */
+  filter: contrast(1.75);
+}
+
+.contenedor-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
