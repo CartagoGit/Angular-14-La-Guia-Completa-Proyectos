@@ -1,50 +1,10 @@
-<div class="card">
-  <!-- INPUTS -->
-  <div class="card-body">
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="generoRadio"
-        id="todos"
-        value="Todos"
-        [(ngModel)]="radioButtonSeleccionado"
-      />
-      <!-- (ngModelChange)="radioChange()" -->
-      <label class="form-check-label" for="todos"
-        >Todos ({{ listEmpleados.length }})</label
-      >
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="generoRadio"
-        id="femenino"
-        value="Femenino"
-        [(ngModel)]="radioButtonSeleccionado"
-      />
-      <!-- (ngModelChange)="radioChange()" -->
-      <label class="form-check-label" for="femenino"
-        >{{ Genero.Femenino }} ({{ listEmpleadosFemeninos.length }})</label
-      >
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="generoRadio"
-        id="masculino"
-        value="Masculino"
-        [(ngModel)]="radioButtonSeleccionado"
-      />
-      <!-- (ngModelChange)="radioChange()" -->
-      <label class="form-check-label" for="masculino"
-        >{{ Genero.Masculino }} ({{ listEmpleadosMasculinos.length }})</label
-      >
-    </div>
-  </div>
-</div>
+<!-- INPUTS -->
+<app-count-empleado
+  [totalTodos]="listEmpleados.length"
+  [totalFemeninos]="totalFemeninos"
+  [totalMasculinos]="totalMasculinos"
+  (countRadioButtonChange)="radioChangedInChild($event)"
+></app-count-empleado>
 <!-- TABLA -->
 <div class="card mt-3">
   <div class="card-body">
@@ -60,11 +20,10 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let empleado of listEmpleados">
-          <!-- <tr *ngFor="let empleado of listEmpleadosSelected"> -->
           <tr
             *ngIf="
-              radioButtonSeleccionado === empleado.genero ||
-              radioButtonSeleccionado === Opciones.Todos
+              radioButtonValue === empleado.genero ||
+              radioButtonValue === Opciones.Todos
             "
           >
             <th scope="row">{{ empleado.legajo }}</th>

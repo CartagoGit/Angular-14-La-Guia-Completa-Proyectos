@@ -24,3 +24,8 @@ export enum Genero {
   Femenino = "Femenino",
   Masculino = "Masculino",
 }
+
+export const Opciones = {
+  Todos: "Todos",
+  ...Genero,
+};

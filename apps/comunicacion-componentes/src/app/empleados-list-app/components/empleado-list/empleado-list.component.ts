@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Empleado, Genero } from "../../models/Empleado";
+import { Empleado, Genero, Opciones } from "../../models/Empleado";
 
 @Component({
   selector: "app-empleado-list",
@@ -58,37 +58,32 @@ export class EmpleadoListComponent implements OnInit {
       salario: 156000,
     },
   ];
-  listEmpleadosMasculinos: Empleado[] = [];
-  listEmpleadosFemeninos: Empleado[] = [];
-  // listEmpleadosSelected: Empleado[] = [];
+  totalFemeninos!: number;
+  totalMasculinos!: number;
 
   readonly Genero = Genero;
-  readonly Opciones = {
-    Todos: "Todos",
-    ...Genero,
-  };
-  radioButtonSeleccionado: string = this.Opciones.Todos;
+  readonly Opciones = Opciones;
 
-  constructor() {
-    console.log(this.Opciones);
-  }
+  radioButtonValue: string = Opciones.Todos;
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.listEmpleadosFemeninos = this.listEmpleados.filter(
-      (list) => list.genero === Genero.Femenino
-    );
-    this.listEmpleadosMasculinos = this.listEmpleados.filter(
-      (list) => list.genero === Genero.Masculino
-    );
-    // this.radioChange();
+    this.totalFemeninos = this.getTotalFemeninos();
+    this.totalMasculinos = this.getTotalMasculinos();
   }
 
-  // radioChange() {
-  //   this.listEmpleadosSelected =
-  //     this.radioButtonSeleccionado === this.Opciones.Todos
-  //       ? [...this.listEmpleados]
-  //       : this.radioButtonSeleccionado === this.Opciones.Femenino
-  //       ? [...this.listEmpleadosFemeninos]
-  //       : [...this.listEmpleadosMasculinos];
-  // }
+  getTotalFemeninos(): number {
+    return this.listEmpleados.filter((list) => list.genero === Genero.Femenino)
+      .length;
+  }
+
+  getTotalMasculinos(): number {
+    return this.listEmpleados.filter((list) => list.genero === Genero.Masculino)
+      .length;
+  }
+
+  radioChangedInChild(radioSelectedValue: string) {
+    this.radioButtonValue = radioSelectedValue;
+  }
 }
