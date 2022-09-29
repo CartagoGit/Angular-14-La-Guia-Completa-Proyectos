@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "comunicacion-componentes": "apps/comunicacion-componentes",
     "convertidor-app": "apps/convertidor-app",
     "dados-app": "apps/dados-app",
     "peso-ideal-app": "apps/peso-ideal-app",

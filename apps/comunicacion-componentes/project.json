@@ -1,0 +1,88 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/comunicacion-componentes/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/comunicacion-componentes",
+        "index": "apps/comunicacion-componentes/src/index.html",
+        "main": "apps/comunicacion-componentes/src/main.ts",
+        "polyfills": "apps/comunicacion-componentes/src/polyfills.ts",
+        "tsConfig": "apps/comunicacion-componentes/tsconfig.app.json",
+        "assets": [
+          "apps/comunicacion-componentes/src/favicon.ico",
+          "apps/comunicacion-componentes/src/assets"
+        ],
+        "styles": [
+          "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "apps/comunicacion-componentes/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/comunicacion-componentes/src/environments/environment.ts",
+              "with": "apps/comunicacion-componentes/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "comunicacion-componentes:build:production"
+        },
+        "development": {
+          "browserTarget": "comunicacion-componentes:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "comunicacion-componentes:build"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/comunicacion-componentes"],
+      "options": {
+        "jestConfig": "apps/comunicacion-componentes/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
