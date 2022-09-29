@@ -1,0 +1,80 @@
+<div class="card">
+  <!-- INPUTS -->
+  <div class="card-body">
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="generoRadio"
+        id="todos"
+        value="Todos"
+        [(ngModel)]="radioButtonSeleccionado"
+      />
+      <!-- (ngModelChange)="radioChange()" -->
+      <label class="form-check-label" for="todos"
+        >Todos ({{ listEmpleados.length }})</label
+      >
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="generoRadio"
+        id="femenino"
+        value="Femenino"
+        [(ngModel)]="radioButtonSeleccionado"
+      />
+      <!-- (ngModelChange)="radioChange()" -->
+      <label class="form-check-label" for="femenino"
+        >{{ Genero.Femenino }} ({{ listEmpleadosFemeninos.length }})</label
+      >
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="generoRadio"
+        id="masculino"
+        value="Masculino"
+        [(ngModel)]="radioButtonSeleccionado"
+      />
+      <!-- (ngModelChange)="radioChange()" -->
+      <label class="form-check-label" for="masculino"
+        >{{ Genero.Masculino }} ({{ listEmpleadosMasculinos.length }})</label
+      >
+    </div>
+  </div>
+</div>
+<!-- TABLA -->
+<div class="card mt-3">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Legajo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Genero</th>
+          <th scope="col">Salario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let empleado of listEmpleados">
+          <!-- <tr *ngFor="let empleado of listEmpleadosSelected"> -->
+          <tr
+            *ngIf="
+              radioButtonSeleccionado === empleado.genero ||
+              radioButtonSeleccionado === Opciones.Todos
+            "
+          >
+            <th scope="row">{{ empleado.legajo }}</th>
+            <td>{{ empleado.nombre }}</td>
+            <td>{{ empleado.apellido }}</td>
+            <td>{{ empleado.genero }}</td>
+            <td>{{ empleado.salario | currency: "EUR" }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
