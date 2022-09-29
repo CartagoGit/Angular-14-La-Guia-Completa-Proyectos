@@ -1,1 +1,24 @@
-<p>resultado works!</p>
+<h2 class="titulo">Resultado</h2>
+<div class="row">
+  <div class="col-12">
+    <div class="fondo-item">
+      <div class="contenedor-item">
+        <p class="resultado" [ngStyle]="{ color: color }">{{ resultado }}</p>
+        <p class="estilo-numero">{{ imc }}</p>
+        <p class="rasgo" [ngStyle]="{ color: color }">{{ rasgo }}</p>
+        <p class="interpretacion">{{ interpretacion }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <button
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      class="btn btn-primary btn-color btn-lg"
+    >
+      RE-CALCULAR
+    </button>
+  </div>
+</div>

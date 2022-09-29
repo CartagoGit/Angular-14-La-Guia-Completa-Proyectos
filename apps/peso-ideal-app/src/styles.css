@@ -11,6 +11,13 @@ body {
   margin-top: 25px;
 }
 
+.fondo-item {
+  background-color: #ff111328;
+  height: 130px;
+  border-radius: 20px;
+  color: white;
+}
+
 .row {
   margin-top: 20px;
   margin-left: 0px;
@@ -37,4 +44,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.pointer {
+  cursor: pointer;
 }

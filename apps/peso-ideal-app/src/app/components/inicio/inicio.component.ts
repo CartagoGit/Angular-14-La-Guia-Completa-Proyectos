@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 interface IGeneroData {
   genero: string;
@@ -18,18 +19,7 @@ export class InicioComponent implements OnInit {
   posiblesGeneros: string[] = ["Masculino", "Femenino"];
   genero = this.posiblesGeneros[0];
 
-  private _generoData: IGeneroData[] = [
-    {
-      genero: this.posiblesGeneros[0],
-      formula: () => {},
-    },
-    {
-      genero: this.posiblesGeneros[1],
-      formula: () => {},
-    },
-  ];
-
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -44,4 +34,15 @@ export class InicioComponent implements OnInit {
         ? this.posiblesGeneros[0]
         : this.posiblesGeneros[1];
   }
+
+  calcularIMC() {
+    const IMC: number = this.getIMC();
+    this.router.navigate(["/resultado", IMC]);
+  }
+
+  getIMC = (): number => {
+    const num = this.peso / Math.pow(this.altura / 100, 2);
+    //REDONDEAR CON EXACTITUD A DOS DECIMALES
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+  };
 }
