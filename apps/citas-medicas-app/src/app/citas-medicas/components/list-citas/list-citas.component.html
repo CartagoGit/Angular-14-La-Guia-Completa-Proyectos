@@ -1,0 +1,29 @@
+<div class="card bg-light">
+  <div class="card-body">
+    <h5 class="card-title text-center">Listado de Citas</h5>
+    <ul class="list-group">
+      <li
+        *ngIf="citas.length === 0"
+        class="list-group-item mb-2 text-light bg-dark"
+      >
+        No hay citas para mostrar
+      </li>
+      <li
+        *ngFor="let cita of citas; let i = index"
+        class="list-group-item mb-2 text-light bg-dark"
+      >
+        <label class="w-100 d-flex justify-content-between">
+          <span>Cita con {{ cita.nombre }}</span>
+          <i
+            class="fa-solid fa-user-xmark align-self-center"
+            type="button"
+            (click)="eliminarCita(i)"
+          ></i>
+        </label>
+        <div>A las {{ cita.hora }} del {{ cita.fecha }}</div>
+        <div>El paciente muestra los siguientes síntomas:</div>
+        <div class="bg-white p-2 mt-1 mb-1 text-dark">{{ cita.sintomas }}</div>
+      </li>
+    </ul>
+  </div>
+</div>
