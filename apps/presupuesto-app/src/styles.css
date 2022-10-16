@@ -21,16 +21,39 @@ body {
 
 h1,
 h2,
+.card,
 .contenido {
   padding: 2rem;
   border-radius: 20px;
 }
 h1,
 h2 {
-  background-color: white;
-  border: solid 2px red;
+  color: #e3e3e3;
+  background-color: black;
+  border: solid 3px rgba(255, 0, 0, 0.308);
 }
+
+label {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+
 
 .text-error {
   font-size: 1rem;
+}
+
+.card {
+  background-color: #e3e3e3;
+  border: 3px solid #000000;
+  color: rgb(59, 59, 59);
+}
+
+.gastos-elemento:first-child {
+  border-right: 1px solid #b9b9b9;
+  padding-right: 40px;
+}
+.gastos-elemento:last-child{
+  padding-left: 40px;
 }
